@@ -3,18 +3,815 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Multi Contracting</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 80px auto; text-align: center; }
-    h1 { font-size: 2.5rem; }
-    p { color: #555; font-size: 1.1rem; }
-    a { display: inline-block; margin-top: 20px; padding: 12px 24px; background: #333; color: white; text-decoration: none; border-radius: 6px; }
-    a:hover { background: #555; }
-  </style>
+
+  <!-- Page Title & SEO Meta -->
+  <title>Multi Contracting, LLC | Roofing Contractor Eugene, OR | (541) 600-9570</title>
+  <meta name="description" content="Multi Contracting, LLC is Eugene, OR's trusted roofing contractor. GAF Master Elite & Owens Corning certified. Roof repair, replacement, siding, fencing, painting & more. Free estimates. CCB#238954.">
+
+  <!-- Open Graph Tags for Social Sharing -->
+  <meta property="og:title" content="Multi Contracting, LLC | Roofing Contractor Eugene, OR">
+  <meta property="og:description" content="Trusted roofing and exterior contractor serving Eugene, Springfield & Santa Clara, OR. 20+ years experience. Free estimates. Licensed, Bonded & Insured.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kellensnider.github.io/Multi-Contracting/">
+  <meta property="og:image" content="https://kellensnider.github.io/Multi-Contracting/images/og-image.jpg">
+
+  <!-- Google Fonts: Montserrat (headings) + Open Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <h1>Multi Contracting</h1>
-  <p>Welcome to the home page.</p>
-  <a href="about.html">About Us</a>
+
+<!-- =============================================
+     TOP INFO BAR
+     Compact strip above the nav with phone,
+     license, and Se Habla Español notice.
+============================================= -->
+<div class="top-bar" role="banner" aria-label="Contact information bar">
+  <div class="container top-bar-inner">
+    <span>📞 <a href="tel:5416009570">(541) 600-9570</a></span>
+    <span class="top-bar-sep">|</span>
+    <span>CCB# 238954 — Licensed, Bonded &amp; Insured</span>
+    <span class="top-bar-sep">|</span>
+    <span>Se Habla Español</span>
+  </div>
+</div>
+
+<!-- =============================================
+     SITE HEADER & NAVIGATION
+     Fixed top nav. Logo left, links center/right,
+     CTA button far right. Mobile hamburger toggle.
+============================================= -->
+<header class="site-header" id="site-header" role="banner">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-container">
+
+      <!-- Company Logo -->
+      <a href="index.html" class="nav-logo" aria-label="Multi Contracting LLC — Go to homepage">
+        <span class="logo-main">Multi Contracting</span>
+        <span class="logo-sub">LLC — Eugene, OR</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-expanded="false"
+        aria-controls="navMenu"
+        aria-label="Open navigation menu"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Navigation Menu -->
+      <div class="nav-menu" id="navMenu" role="menubar">
+        <ul class="nav-list" role="list">
+          <li class="nav-item" role="none">
+            <a href="index.html" class="nav-link is-active" role="menuitem">Home</a>
+          </li>
+          <li class="nav-item" role="none">
+            <a href="about.html" class="nav-link" role="menuitem">About</a>
+          </li>
+
+          <!-- Services Dropdown -->
+          <li class="nav-item nav-item--dropdown" role="none">
+            <a
+              href="services/roofing.html"
+              class="nav-link nav-link--dropdown"
+              role="menuitem"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >Services <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
+            <ul class="dropdown-menu" role="menu" aria-label="Services submenu">
+              <li role="none"><a href="services/roofing.html"               class="dropdown-link" role="menuitem">All Roofing Services</a></li>
+              <li role="none"><a href="services/roof-repair.html"           class="dropdown-link" role="menuitem">Roof Repair</a></li>
+              <li role="none"><a href="services/roof-replacement.html"      class="dropdown-link" role="menuitem">Roof Replacement</a></li>
+              <li role="none"><a href="services/residential-roofing.html"   class="dropdown-link" role="menuitem">Residential Roofing</a></li>
+              <li role="none"><a href="services/commercial-roofing.html"    class="dropdown-link" role="menuitem">Commercial Roofing</a></li>
+              <li role="none"><a href="services/siding.html"                class="dropdown-link" role="menuitem">Siding</a></li>
+              <li role="none"><a href="services/fencing.html"               class="dropdown-link" role="menuitem">Chain Link Fencing</a></li>
+              <li role="none"><a href="services/painting.html"              class="dropdown-link" role="menuitem">Painting</a></li>
+              <li role="none"><a href="services/curbing.html"               class="dropdown-link" role="menuitem">Curbing Designs</a></li>
+            </ul>
+          </li>
+
+          <!-- Service Areas Dropdown -->
+          <li class="nav-item nav-item--dropdown" role="none">
+            <a
+              href="#service-areas"
+              class="nav-link nav-link--dropdown"
+              role="menuitem"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >Service Areas <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
+            <ul class="dropdown-menu" role="menu" aria-label="Service areas submenu">
+              <li role="none"><a href="service-areas/eugene.html"      class="dropdown-link" role="menuitem">Eugene, OR</a></li>
+              <li role="none"><a href="service-areas/springfield.html" class="dropdown-link" role="menuitem">Springfield, OR</a></li>
+              <li role="none"><a href="service-areas/santa-clara.html" class="dropdown-link" role="menuitem">Santa Clara, OR</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item" role="none">
+            <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Nav CTA Button -->
+        <a href="tel:5416009570" class="btn btn-primary nav-cta" aria-label="Call Multi Contracting at (541) 600-9570">
+          Call (541) 600-9570
+        </a>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+<!-- =============================================
+     MAIN PAGE CONTENT
+============================================= -->
+<main>
+
+  <!-- =============================================
+       HERO SECTION
+       Full-width banner with bold headline,
+       short subheading, and dual CTA buttons.
+       Background: CSS gradient. PLACEHOLDER: Replace
+       with real roofing photo for production.
+  ============================================= -->
+  <section class="hero" aria-label="Hero banner" style="margin-top: calc(var(--nav-height) + 32px);">
+    <div class="container">
+      <div class="hero-content animate-fade-up">
+
+        <!-- Certification Badge -->
+        <div class="hero-badge" aria-label="GAF Master Elite and Owens Corning Certified">
+          ★ GAF Master Elite &amp; Owens Corning Certified
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="hero-title">
+          Trusted Roofing Contractor<br>
+          in <span>Eugene, OR</span> &amp; Beyond
+        </h1>
+
+        <!-- Subheading -->
+        <p class="hero-subtitle">
+          Multi Contracting, LLC delivers expert roofing, siding, fencing, painting,
+          and curbing services across Lane County. Over 20 years of experience.
+          Free estimates. Licensed, Bonded &amp; Insured.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg">Get a Free Estimate</a>
+          <a href="tel:5416009570" class="btn btn-outline btn-lg">📞 (541) 600-9570</a>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="hero-trust" role="list" aria-label="Trust indicators">
+          <div class="hero-trust-item" role="listitem">
+            <span class="hero-trust-icon" aria-hidden="true">✔</span>
+            20+ Years Experience
+          </div>
+          <div class="hero-trust-item" role="listitem">
+            <span class="hero-trust-icon" aria-hidden="true">✔</span>
+            Free Estimates &amp; Inspections
+          </div>
+          <div class="hero-trust-item" role="listitem">
+            <span class="hero-trust-icon" aria-hidden="true">✔</span>
+            Insurance Claims Assistance
+          </div>
+          <div class="hero-trust-item" role="listitem">
+            <span class="hero-trust-icon" aria-hidden="true">✔</span>
+            Se Habla Español
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       FEATURE STRIP
+       Three-column icon row highlighting core
+       value propositions beneath the hero.
+  ============================================= -->
+  <section class="feature-strip" aria-label="Our key advantages">
+    <div class="container">
+      <div class="feature-strip-grid">
+
+        <!-- Feature 1: Experience -->
+        <div class="feature-item animate-fade-up animate-delay-1">
+          <div class="feature-icon" aria-hidden="true">
+            <!-- Shield / expertise icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2zm-1 13l-3-3 1.41-1.41L11 12.17l4.59-4.58L17 9l-6 6z"/>
+            </svg>
+          </div>
+          <div>
+            <h3>20+ Years of Experience</h3>
+            <p>Decades of roofing expertise in Eugene and the greater Lane County area. We've earned the trust of thousands of Oregon homeowners.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2: Free Estimates -->
+        <div class="feature-item animate-fade-up animate-delay-2">
+          <div class="feature-icon" aria-hidden="true">
+            <!-- Calendar / free estimate icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Free Estimates &amp; Inspections</h3>
+            <p>No commitment required. We provide honest, no-pressure estimates so you can make an informed decision with full confidence.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3: Insurance Claims -->
+        <div class="feature-item animate-fade-up animate-delay-3">
+          <div class="feature-icon" aria-hidden="true">
+            <!-- Document / insurance icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M14 2H6C4.9 2 4 2.9 4 4v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Insurance Claims Assistance</h3>
+            <p>Storm damage to your roof? We work directly with your insurance company to streamline the claims process and get your home restored fast.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       ROOFING SERVICES SECTION
+       Card grid showcasing our roofing offerings.
+  ============================================= -->
+  <section class="services-section" aria-labelledby="roofing-services-heading">
+    <div class="container">
+
+      <header class="section-header">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title" id="roofing-services-heading">Roofing Services</h2>
+        <p class="section-subtitle">
+          From emergency repairs to full roof replacements, our certified team handles
+          every roofing challenge with skill and precision.
+        </p>
+        <div class="divider"></div>
+      </header>
+
+      <div class="grid grid--4 animate-fade-up">
+
+        <!-- Roof Repair Card -->
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">🔨</div>
+          <h3>Roof Repair</h3>
+          <p>Leaks, missing shingles, flashing damage — we fix it all quickly and correctly to prevent further water intrusion and structural damage.</p>
+          <a href="services/roof-repair.html" class="service-card-link" aria-label="Learn more about Roof Repair">Learn More</a>
+        </article>
+
+        <!-- Roof Replacement Card -->
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">🏠</div>
+          <h3>Roof Replacement</h3>
+          <p>Asphalt shingles, metal, tile, or flat roofing — we install the right system for your home's needs, budget, and Lane County climate.</p>
+          <a href="services/roof-replacement.html" class="service-card-link" aria-label="Learn more about Roof Replacement">Learn More</a>
+        </article>
+
+        <!-- Residential Roofing Card -->
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">🏡</div>
+          <h3>Residential Roofing</h3>
+          <p>Your home deserves a roof built to last. We serve homeowners across Eugene, Springfield, and Santa Clara with certified residential roofing solutions.</p>
+          <a href="services/residential-roofing.html" class="service-card-link" aria-label="Learn more about Residential Roofing">Learn More</a>
+        </article>
+
+        <!-- Commercial Roofing Card -->
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">🏢</div>
+          <h3>Commercial Roofing</h3>
+          <p>TPO, EPDM, modified bitumen, and metal roofing systems for commercial properties. Minimal disruption to your business operations.</p>
+          <a href="services/commercial-roofing.html" class="service-card-link" aria-label="Learn more about Commercial Roofing">Learn More</a>
+        </article>
+
+      </div>
+
+      <div class="text-center mt-lg">
+        <a href="services/roofing.html" class="btn btn-outline-dark">View All Roofing Services</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       ADDITIONAL SERVICES SECTION
+       Second service block: siding, fencing,
+       painting, curbing — the "one-stop-shop" value.
+  ============================================= -->
+  <section class="services-section section--alt" aria-labelledby="additional-services-heading">
+    <div class="container">
+
+      <header class="section-header">
+        <span class="section-label">More Than Just Roofing</span>
+        <h2 class="section-title" id="additional-services-heading">Additional Services</h2>
+        <p class="section-subtitle">
+          We're your one-stop exterior contractor. From siding and fencing to custom curbing
+          and fresh paint — we handle it all under one roof.
+        </p>
+        <div class="divider"></div>
+      </header>
+
+      <div class="grid grid--4 animate-fade-up">
+
+        <!-- Siding Card -->
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">🧱</div>
+          <h3>Siding</h3>
+          <p>Protect and beautify your home's exterior with durable, professionally installed siding. Improve curb appeal and energy efficiency.</p>
+          <a href="services/siding.html" class="service-card-link" aria-label="Learn more about Siding">Learn More</a>
+        </article>
+
+        <!-- Fencing Card -->
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">🔗</div>
+          <h3>Chain Link Fencing</h3>
+          <p>Secure your property with affordable, long-lasting chain link fencing. We handle residential and commercial installations across Eugene.</p>
+          <a href="services/fencing.html" class="service-card-link" aria-label="Learn more about Chain Link Fencing">Learn More</a>
+        </article>
+
+        <!-- Painting Card -->
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">🖌️</div>
+          <h3>Interior &amp; Exterior Painting</h3>
+          <p>Refresh your home inside and out with quality paint work. Proper prep, premium products, and clean results every time.</p>
+          <a href="services/painting.html" class="service-card-link" aria-label="Learn more about Painting">Learn More</a>
+        </article>
+
+        <!-- Curbing Card -->
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">🌿</div>
+          <h3>Curbing Designs</h3>
+          <p>Define and elevate your landscape with custom concrete curbing. Functional, attractive edging for gardens, driveways, and walkways.</p>
+          <a href="services/curbing.html" class="service-card-link" aria-label="Learn more about Curbing Designs">Learn More</a>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       GUARANTEE / TRUST SECTION
+       Full-width dark navy block with certification
+       badges and warranty statement.
+  ============================================= -->
+  <section class="trust-section" aria-labelledby="trust-heading">
+    <div class="container text-center">
+
+      <span class="section-label">Our Commitment to You</span>
+      <h2 class="section-title" id="trust-heading">
+        Certified Quality You Can Count On
+      </h2>
+      <p class="section-subtitle" style="margin: var(--spacing-sm) auto var(--spacing-lg); color: rgba(255,255,255,0.8);">
+        As a GAF Master Elite and Owens Corning certified contractor, we install roofing systems
+        backed by industry-leading manufacturer warranties — giving you peace of mind for decades to come.
+      </p>
+
+      <!-- Trust Badges -->
+      <div class="trust-badges" role="list" aria-label="Certifications and credentials">
+        <div class="trust-badge" role="listitem">
+          <span class="trust-badge-icon" aria-hidden="true">🏆</span>
+          GAF Master Elite Certified
+        </div>
+        <div class="trust-badge" role="listitem">
+          <span class="trust-badge-icon" aria-hidden="true">🏅</span>
+          Owens Corning Preferred
+        </div>
+        <div class="trust-badge" role="listitem">
+          <span class="trust-badge-icon" aria-hidden="true">✅</span>
+          Licensed · Bonded · Insured
+        </div>
+        <div class="trust-badge" role="listitem">
+          <span class="trust-badge-icon" aria-hidden="true">📋</span>
+          CCB# 238954
+        </div>
+        <div class="trust-badge" role="listitem">
+          <span class="trust-badge-icon" aria-hidden="true">💬</span>
+          Se Habla Español
+        </div>
+      </div>
+
+      <div style="margin-top: var(--spacing-lg);">
+        <a href="about.html" class="btn btn-outline">Learn About Our Team</a>
+        &nbsp;
+        <a href="https://app.gethearth.com/partners/multi-contracting-llc" target="_blank" rel="noopener" class="btn btn-outline" aria-label="Apply for financing through Hearth (opens in new tab)">
+          Financing Available
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       ABOUT SECTION
+       Two-column layout: text on left, image right.
+       Highlights 20-year history, bilingual service.
+  ============================================= -->
+  <section class="about-section" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- About Text -->
+        <div class="about-content animate-fade-up">
+          <span class="section-label">Who We Are</span>
+          <h2 class="section-title" id="about-heading">Eugene's Trusted Exterior Contractor</h2>
+          <div class="divider"></div>
+
+          <p>
+            Multi Contracting, LLC has been serving homeowners and businesses across Eugene,
+            Springfield, and Santa Clara for over two decades. What started as a local roofing
+            company has grown into Lane County's most trusted one-stop exterior contracting solution.
+          </p>
+          <p>
+            Our bilingual team (English &amp; Spanish) brings skill, honesty, and genuine care to every
+            project — whether it's an emergency roof repair or a complete exterior renovation. We're
+            proud to be GAF Master Elite and Owens Corning certified, meaning every roof we install
+            qualifies for the strongest available manufacturer warranties.
+          </p>
+
+          <!-- Checklist of strengths -->
+          <ul class="about-checklist" role="list">
+            <li class="about-checklist-item" role="listitem">
+              <span class="about-check" aria-hidden="true">✔</span>
+              Over 20 years serving Lane County, Oregon
+            </li>
+            <li class="about-checklist-item" role="listitem">
+              <span class="about-check" aria-hidden="true">✔</span>
+              GAF Master Elite &amp; Owens Corning certified installers
+            </li>
+            <li class="about-checklist-item" role="listitem">
+              <span class="about-check" aria-hidden="true">✔</span>
+              Bilingual team — English &amp; Spanish (Se Habla Español)
+            </li>
+            <li class="about-checklist-item" role="listitem">
+              <span class="about-check" aria-hidden="true">✔</span>
+              Storm damage and insurance claims specialists
+            </li>
+            <li class="about-checklist-item" role="listitem">
+              <span class="about-check" aria-hidden="true">✔</span>
+              Flexible financing available through Hearth
+            </li>
+          </ul>
+
+          <div style="margin-top: var(--spacing-lg);">
+            <a href="about.html" class="btn btn-secondary">Meet Our Team</a>
+            &nbsp;
+            <a href="contact.html" class="btn btn-outline-dark" style="margin-left: var(--spacing-xs);">Get Free Estimate</a>
+          </div>
+        </div>
+
+        <!-- About Image -->
+        <div class="about-image-wrap animate-fade-up animate-delay-2">
+          <!--
+            PLACEHOLDER IMAGE: Replace with a real photo of the team
+            or a completed roofing project in Eugene, OR.
+          -->
+          <img
+            src="https://picsum.photos/seed/roofing-team/700/500"
+            alt="Multi Contracting LLC team working on a roofing project in Eugene, Oregon"
+            width="700"
+            height="500"
+            loading="lazy"
+          >
+          <!-- Experience badge overlaid on image -->
+          <div class="about-badge" aria-label="20 plus years of experience">
+            <span class="about-badge-number">20+</span>
+            <span class="about-badge-label">Years in Business</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       TESTIMONIALS SECTION
+       Six customer review cards in a responsive
+       grid with 5-star ratings and author names.
+  ============================================= -->
+  <section class="testimonials-section" aria-labelledby="testimonials-heading">
+    <div class="container">
+
+      <header class="section-header section-header--center">
+        <span class="section-label">What Our Customers Say</span>
+        <h2 class="section-title" id="testimonials-heading">Real Reviews from Real Oregonians</h2>
+        <div class="divider divider--center"></div>
+        <a
+          href="https://www.google.com/maps/search/Multi+Contracting+LLC+Eugene+OR"
+          target="_blank"
+          rel="noopener"
+          class="google-badge"
+          aria-label="View our Google Reviews (opens in new tab)"
+        >
+          ⭐ View All Google Reviews
+        </a>
+      </header>
+
+      <div class="grid grid--3 animate-fade-up">
+
+        <!-- Review: Mike G. -->
+        <article class="testimonial-card" aria-label="Review by Mike G.">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars" role="img">
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+          </div>
+          <blockquote class="testimonial-quote">
+            "These guys are very professional and their workmanship is outstanding."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">M</div>
+            <div>
+              <div class="author-name">Mike G.</div>
+              <div class="author-detail">Eugene, OR — Google Review</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review: Don M. -->
+        <article class="testimonial-card" aria-label="Review by Don M.">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars" role="img">
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+          </div>
+          <blockquote class="testimonial-quote">
+            "They came on a holiday for regular rate due to emergency nature of roof leaking. Really appreciate the responsiveness and professionalism."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">D</div>
+            <div>
+              <div class="author-name">Don M.</div>
+              <div class="author-detail">Eugene, OR — Google Review</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review: Alivia F. -->
+        <article class="testimonial-card" aria-label="Review by Alivia F.">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars" role="img">
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+          </div>
+          <blockquote class="testimonial-quote">
+            "This company was very easy to get in contact with. Clear communication, quick process. Great results — will be hiring them again."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">A</div>
+            <div>
+              <div class="author-name">Alivia F.</div>
+              <div class="author-detail">Springfield, OR — Google Review</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review: Cyris W. -->
+        <article class="testimonial-card" aria-label="Review by Cyris W.">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars" role="img">
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+          </div>
+          <blockquote class="testimonial-quote">
+            "Had a need for an emergency fence repair and they pulled through entirely. Would hire them again 100%."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">C</div>
+            <div>
+              <div class="author-name">Cyris W.</div>
+              <div class="author-detail">Eugene, OR — Google Review</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review: Elvia A. -->
+        <article class="testimonial-card" aria-label="Review by Elvia A.">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars" role="img">
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+          </div>
+          <blockquote class="testimonial-quote">
+            "The crew did a great job and answered all my questions. I recommend their services to anyone looking for a reliable contractor."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">E</div>
+            <div>
+              <div class="author-name">Elvia A.</div>
+              <div class="author-detail">Santa Clara, OR — Google Review</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review: Ismael R.V. -->
+        <article class="testimonial-card" aria-label="Review by Ismael R.V.">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars" role="img">
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+          </div>
+          <blockquote class="testimonial-quote">
+            "Great all around contractor. Needing a new long lasting roof without a high price, these guys get it done quick. Highly recommended."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">I</div>
+            <div>
+              <div class="author-name">Ismael R.V.</div>
+              <div class="author-detail">Eugene, OR — Google Review</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       SERVICE AREAS STRIP
+       Horizontal band with clickable location
+       links for Eugene, Springfield, Santa Clara.
+  ============================================= -->
+  <div class="areas-strip" id="service-areas" aria-label="Service areas">
+    <div class="container">
+      <div class="areas-strip-inner">
+        <span class="areas-strip-label">We Serve:</span>
+        <ul class="areas-list" role="list">
+          <li role="listitem">
+            <a href="service-areas/eugene.html" class="area-link" aria-label="Roofing services in Eugene, Oregon">
+              📍 Eugene, OR
+            </a>
+          </li>
+          <li role="listitem">
+            <a href="service-areas/springfield.html" class="area-link" aria-label="Roofing services in Springfield, Oregon">
+              📍 Springfield, OR
+            </a>
+          </li>
+          <li role="listitem">
+            <a href="service-areas/santa-clara.html" class="area-link" aria-label="Roofing services in Santa Clara, Oregon">
+              📍 Santa Clara, OR
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =============================================
+       CTA BANNER
+       Orange full-width section encouraging
+       visitors to call or get a free estimate.
+  ============================================= -->
+  <section class="cta-banner" aria-labelledby="cta-heading">
+    <div class="container">
+      <h2 id="cta-heading">Ready to Get Started?</h2>
+      <p>Call us today for a free, no-obligation estimate. We serve Eugene, Springfield, and Santa Clara, OR.</p>
+      <a href="tel:5416009570" class="cta-phone" aria-label="Call Multi Contracting at (541) 600-9570">(541) 600-9570</a>
+      <div class="cta-banner-actions">
+        <a href="contact.html" class="btn btn-secondary btn-lg">Get a Free Estimate</a>
+        <a href="https://app.gethearth.com/partners/multi-contracting-llc" target="_blank" rel="noopener" class="btn btn-outline btn-lg" aria-label="Apply for financing (opens in new tab)">Apply for Financing</a>
+      </div>
+      <p class="cta-espanol">Se Habla Español — Bilingual Service Available</p>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- =============================================
+     SITE FOOTER
+     Three-column layout: Brand, Links, Contact.
+     Dark navy background. CCB license and hours.
+============================================= -->
+<footer class="site-footer" role="contentinfo">
+
+  <!-- Footer Top: Three columns -->
+  <div class="footer-top">
+    <div class="container footer-grid">
+
+      <!-- Column 1: Brand & License -->
+      <div class="footer-col footer-col--brand">
+        <a href="index.html" class="footer-logo-text" aria-label="Multi Contracting LLC — Home">Multi Contracting</a>
+        <span class="footer-logo-sub">LLC — Eugene, Oregon</span>
+        <p class="footer-tagline">Trusted Roofing Contractor in Eugene, OR &amp; Beyond. Serving Lane County for over 20 years.</p>
+        <p class="footer-license">CCB# 238954 | Licensed, Bonded &amp; Insured</p>
+        <div class="footer-social">
+          <a
+            href="https://www.google.com/maps/search/Multi+Contracting+LLC+Eugene+OR"
+            target="_blank"
+            rel="noopener"
+            class="social-link"
+            aria-label="View Google Reviews for Multi Contracting LLC (opens in new tab)"
+          >⭐ Google Reviews</a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-col footer-col--links">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links" role="list">
+          <li role="listitem"><a href="index.html"                          class="footer-link">Home</a></li>
+          <li role="listitem"><a href="about.html"                          class="footer-link">About Us</a></li>
+          <li role="listitem"><a href="services/roofing.html"               class="footer-link">Roofing Services</a></li>
+          <li role="listitem"><a href="services/roof-repair.html"           class="footer-link">Roof Repair</a></li>
+          <li role="listitem"><a href="services/roof-replacement.html"      class="footer-link">Roof Replacement</a></li>
+          <li role="listitem"><a href="services/siding.html"                class="footer-link">Siding</a></li>
+          <li role="listitem"><a href="services/fencing.html"               class="footer-link">Fencing</a></li>
+          <li role="listitem"><a href="services/painting.html"              class="footer-link">Painting</a></li>
+          <li role="listitem"><a href="services/curbing.html"               class="footer-link">Curbing</a></li>
+          <li role="listitem"><a href="contact.html"                        class="footer-link">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact Info & Hours -->
+      <div class="footer-col footer-col--contact">
+        <h3 class="footer-heading">Contact Us</h3>
+        <ul class="footer-contact-list" role="list">
+          <li class="footer-contact-item" role="listitem">
+            <span class="footer-contact-icon" aria-hidden="true">📞</span>
+            <a href="tel:5416009570" aria-label="Call (541) 600-9570">(541) 600-9570</a>
+          </li>
+          <li class="footer-contact-item" role="listitem">
+            <span class="footer-contact-icon" aria-hidden="true">✉</span>
+            <a href="mailto:multicontractllc@gmail.com" aria-label="Email multicontractllc@gmail.com">multicontractllc@gmail.com</a>
+          </li>
+          <li class="footer-contact-item" role="listitem">
+            <span class="footer-contact-icon" aria-hidden="true">📍</span>
+            <span>950 Tyinn St, Eugene, OR 97402</span>
+          </li>
+        </ul>
+
+        <div class="footer-hours">
+          <strong>Business Hours</strong>
+          <p>Mon–Fri: 8:00 AM – 5:00 PM</p>
+          <p>Sat–Sun: Closed</p>
+        </div>
+
+        <div class="footer-financing">
+          <a
+            href="https://app.gethearth.com/partners/multi-contracting-llc"
+            target="_blank"
+            rel="noopener"
+            aria-label="Apply for financing through Hearth (opens in new tab)"
+          >💳 Financing Available via Hearth</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer Bottom: Copyright & Languages -->
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p class="footer-copyright">
+        &copy; 2024 Multi Contracting, LLC. All rights reserved. | CCB# 238954 | Licensed, Bonded &amp; Insured
+      </p>
+      <p class="footer-languages">Se Habla Español | English &amp; Spanish</p>
+    </div>
+  </div>
+
+</footer>
+
+<!-- Main JavaScript -->
+<script src="js/main.js"></script>
+
 </body>
 </html>
