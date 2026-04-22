@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi Contracting — Brand System</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #F5F0E8;
+    color: #1A1A1A;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 48px 32px;
+  }
+
+  .brand-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.06em;
+    color: #C68A00;
+    margin-bottom: 4px;
+  }
+
+  .brand-tagline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: #E05A00;
+    text-transform: uppercase;
+    margin-bottom: 48px;
+  }
+
+  section { margin-bottom: 56px; }
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    color: #7A7060;
+    border-bottom: 1px solid #D8D0C0;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+  }
+
+  /* Color Swatches */
+  .swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 140px;
+  }
+
+  .swatch-block {
+    width: 140px;
+    height: 80px;
+    border-radius: 4px;
+    border: 1px solid #D8D0C0;
+  }
+
+  .swatch-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #C68A00;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .swatch-hex {
+    font-size: 13px;
+    color: #7A7060;
+    font-family: monospace;
+  }
+
+  .swatch-role {
+    font-size: 12px;
+    color: #9A9080;
+  }
+
+  /* Typography Samples */
+  .type-sample { margin-bottom: 32px; }
+
+  .type-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #9A9080;
+    margin-bottom: 8px;
+  }
+
+  .sample-display {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    letter-spacing: 0.04em;
+    color: #C68A00;
+    line-height: 1;
+  }
+
+  .sample-subheading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.08em;
+    color: #1A1A1A;
+    text-transform: uppercase;
+  }
+
+  .sample-tagline-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: #E05A00;
+    text-transform: uppercase;
+  }
+
+  .sample-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4A4438;
+    max-width: 540px;
+  }
+
+  /* Component Demos */
+  .components { display: flex; flex-direction: column; gap: 24px; }
+
+  .btn-primary {
+    display: inline-block;
+    background: #E8A000;
+    color: #1A1A1A;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    padding: 14px 32px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: #1A1A1A;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    padding: 13px 32px;
+    border: 2px solid #1A1A1A;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  /* Hero Demo — dark section still available for contrast moments */
+  .hero-demo {
+    background: #1A1A1A;
+    border: 1px solid #2A2A2A;
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-demo::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #E8A000, #E05A00);
+  }
+
+  .hero-demo .eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    color: #E05A00;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .hero-demo h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 0.04em;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .hero-demo h1 span {
+    color: #E8A000;
+  }
+
+  .hero-demo p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #AAAAAA;
+    max-width: 480px;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  /* Light section demo */
+  .light-demo {
+    background: #EAE5DC;
+    border: 1px solid #D8D0C0;
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .light-demo::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #E8A000, #E05A00);
+  }
+
+  .light-demo .eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    color: #E05A00;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .light-demo h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .light-demo h1 span {
+    color: #C68A00;
+  }
+
+  .light-demo p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #4A4438;
+    max-width: 480px;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  /* Palette Reference Box */
+  .palette-ref {
+    background: #EAE5DC;
+    border: 1px solid #D8D0C0;
+    padding: 20px 24px;
+    border-left: 4px solid #E8A000;
+  }
+
+  .palette-ref h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: #C68A00;
+    margin-bottom: 12px;
+  }
+
+  .palette-ref table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .palette-ref td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #D8D0C0;
+    color: #4A4438;
+    vertical-align: middle;
+  }
+
+  .palette-ref td:first-child {
+    font-weight: 600;
+    color: #1A1A1A;
+    width: 180px;
+  }
+
+  .palette-ref td:last-child {
+    font-family: monospace;
+    color: #7A7060;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<p class="brand-title">Multi Contracting</p>
+<p class="brand-tagline">— Integrity in Every Layer —</p>
+
+<!-- COLOR PALETTE -->
+<section>
+  <h2>Color Palette</h2>
+  <div class="swatches">
+    <div class="swatch">
+      <div class="swatch-block" style="background:#F5F0E8;"></div>
+      <span class="swatch-name">Warm Cream</span>
+      <span class="swatch-hex">#F5F0E8</span>
+      <span class="swatch-role">Primary background</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#EAE5DC;"></div>
+      <span class="swatch-name">Concrete</span>
+      <span class="swatch-hex">#EAE5DC</span>
+      <span class="swatch-role">Section / card background</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#E8A000;"></div>
+      <span class="swatch-name">Gold Amber</span>
+      <span class="swatch-hex">#E8A000</span>
+      <span class="swatch-role">Primary accent / CTA</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#E05A00;"></div>
+      <span class="swatch-name">Burnt Orange</span>
+      <span class="swatch-hex">#E05A00</span>
+      <span class="swatch-role">Secondary accent / eyebrow</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#1A1A1A;"></div>
+      <span class="swatch-name">Near Black</span>
+      <span class="swatch-hex">#1A1A1A</span>
+      <span class="swatch-role">Primary text / dark sections</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#4A4438;"></div>
+      <span class="swatch-name">Dark Tan</span>
+      <span class="swatch-hex">#4A4438</span>
+      <span class="swatch-role">Body text</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#7A7060;"></div>
+      <span class="swatch-name">Warm Gray</span>
+      <span class="swatch-hex">#7A7060</span>
+      <span class="swatch-role">Muted / label text</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#D8D0C0;"></div>
+      <span class="swatch-name">Sand</span>
+      <span class="swatch-hex">#D8D0C0</span>
+      <span class="swatch-role">Borders / dividers</span>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section>
+  <h2>Typography</h2>
+
+  <div class="type-sample">
+    <p class="type-label">Display — Bebas Neue (headings, hero, section titles)</p>
+    <p class="sample-display">Multi Contracting</p>
+  </div>
+
+  <div class="type-sample">
+    <p class="type-label">Subheading — Barlow Condensed Bold, All Caps</p>
+    <p class="sample-subheading">Residential &amp; Commercial Services</p>
+  </div>
+
+  <div class="type-sample">
+    <p class="type-label">Tagline — Barlow Condensed Semibold Italic, Tracked</p>
+    <p class="sample-tagline-text">— Integrity in Every Layer —</p>
+  </div>
+
+  <div class="type-sample">
+    <p class="type-label">Body — Inter 400, 15px / 1.7 line-height</p>
+    <p class="sample-body">We handle every trade under one roof — from framing to finish work. Licensed, insured, and built on a reputation that speaks for itself in Eugene and across the Willamette Valley.</p>
+  </div>
+</section>
+
+<!-- BUTTONS -->
+<section>
+  <h2>Buttons</h2>
+  <div class="components">
+    <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:center;">
+      <a class="btn-primary" href="#">Get a Free Estimate</a>
+      <a class="btn-secondary" href="#">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- HERO DEMOS -->
+<section>
+  <h2>Hero Pattern — Dark (accent sections, hero over photo)</h2>
+  <div class="hero-demo">
+    <p class="eyebrow">— Eugene, OR — Licensed &amp; Insured —</p>
+    <h1>Built Right.<br><span>Every Layer.</span></h1>
+    <p>Multi Contracting handles residential and commercial projects across the Willamette Valley. One crew, every trade, zero shortcuts.</p>
+    <a class="btn-primary" href="#">Get a Free Estimate</a>
+  </div>
+</section>
+
+<section>
+  <h2>Hero Pattern — Light (interior sections, body content)</h2>
+  <div class="light-demo">
+    <p class="eyebrow">— Eugene, OR — Licensed &amp; Insured —</p>
+    <h1>Built Right.<br><span>Every Layer.</span></h1>
+    <p>Multi Contracting handles residential and commercial projects across the Willamette Valley. One crew, every trade, zero shortcuts.</p>
+    <a class="btn-primary" href="#">Get a Free Estimate</a>
+  </div>
+</section>
+
+<!-- PALETTE REFERENCE -->
+<section>
+  <h2>Quick Reference</h2>
+  <div class="palette-ref">
+    <h3>CSS Variables to Use in Every Build</h3>
+    <table>
+      <tr>
+        <td><span class="dot" style="background:#F5F0E8; border:1px solid #D8D0C0;"></span>--mc-cream</td>
+        <td>Primary background</td>
+        <td>#F5F0E8</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#EAE5DC; border:1px solid #D8D0C0;"></span>--mc-concrete</td>
+        <td>Section / card background</td>
+        <td>#EAE5DC</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#E8A000;"></span>--mc-gold</td>
+        <td>Primary accent / CTA</td>
+        <td>#E8A000</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#E05A00;"></span>--mc-orange</td>
+        <td>Secondary accent / eyebrow</td>
+        <td>#E05A00</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#1A1A1A;"></span>--mc-black</td>
+        <td>Primary text / dark sections</td>
+        <td>#1A1A1A</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#4A4438;"></span>--mc-body</td>
+        <td>Body copy</td>
+        <td>#4A4438</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#7A7060;"></span>--mc-muted</td>
+        <td>Labels / muted text</td>
+        <td>#7A7060</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#D8D0C0;"></span>--mc-border</td>
+        <td>Borders / dividers</td>
+        <td>#D8D0C0</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- PERSONALITY -->
+<section>
+  <h2>Brand Personality</h2>
+  <div style="display:flex; flex-wrap:wrap; gap:12px;">
+    <span style="background:#EAE5DC; color:#C68A00; border:1px solid #D8D0C0; font-family:'Bebas Neue',sans-serif; letter-spacing:0.1em; padding:8px 16px; font-size:0.9rem;">INDUSTRIAL</span>
+    <span style="background:#EAE5DC; color:#C68A00; border:1px solid #D8D0C0; font-family:'Bebas Neue',sans-serif; letter-spacing:0.1em; padding:8px 16px; font-size:0.9rem;">BOLD</span>
+    <span style="background:#EAE5DC; color:#C68A00; border:1px solid #D8D0C0; font-family:'Bebas Neue',sans-serif; letter-spacing:0.1em; padding:8px 16px; font-size:0.9rem;">RUGGED</span>
+    <span style="background:#EAE5DC; color:#C68A00; border:1px solid #D8D0C0; font-family:'Bebas Neue',sans-serif; letter-spacing:0.1em; padding:8px 16px; font-size:0.9rem;">RELIABLE</span>
+    <span style="background:#EAE5DC; color:#C68A00; border:1px solid #D8D0C0; font-family:'Bebas Neue',sans-serif; letter-spacing:0.1em; padding:8px 16px; font-size:0.9rem;">APPROACHABLE</span>
+    <span style="background:#EAE5DC; color:#C68A00; border:1px solid #D8D0C0; font-family:'Bebas Neue',sans-serif; letter-spacing:0.1em; padding:8px 16px; font-size:0.9rem;">NO-NONSENSE</span>
+  </div>
+</section>
+
+<!-- FONT IMPORTS NOTE -->
+<section>
+  <h2>Font Import</h2>
+  <div style="background:#EAE5DC; padding:16px 20px; border:1px solid #D8D0C0; font-family:monospace; font-size:13px; color:#7A7060; line-height:1.6;">
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,600;1,700&amp;family=Inter:wght@300;400;500;600&amp;display=swap');
+  </div>
+</section>
+
+</body>
+</html>

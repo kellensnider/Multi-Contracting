@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initActiveNavLink();
   initSmoothScroll();
+  initPageTransitions();
+  initVideoControls();
 });
 
 
@@ -241,16 +243,38 @@ function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
-
-    // Clear previous errors before re-validating
     clearFormErrors(form);
 
     const isValid = validateForm(form);
+    if (!isValid) return;
 
-    if (isValid) {
-      showFormSuccess(form);
+    const submitBtn = form.querySelector('[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        showFormSuccess(form);
+      } else {
+        const data = await response.json();
+        const msg = (data.errors || []).map(e => e.message).join(', ') || 'Submission failed. Please call us directly at (541) 600-9570.';
+        showFormError(form, msg);
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    } catch {
+      showFormError(form, 'Network error. Please call us directly at (541) 600-9570.');
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
     }
   });
 
@@ -378,13 +402,22 @@ function clearFormErrors(form) {
  */
 function showFormSuccess(form) {
   const successEl = document.getElementById('formSuccess');
-
-  // Hide form fields, show success panel
   form.querySelector('.form-fields').style.display = 'none';
   if (successEl) {
     successEl.classList.add('is-visible');
-    successEl.focus(); // Move focus to success message for screen readers
+    successEl.focus();
   }
+}
+
+function showFormError(form, message) {
+  let errEl = form.querySelector('.form-submit-error');
+  if (!errEl) {
+    errEl = document.createElement('p');
+    errEl.className = 'form-submit-error';
+    errEl.style.cssText = 'color: #ff6b6b; font-size: 0.9rem; margin-top: 12px; text-align: center;';
+    form.querySelector('.form-fields').appendChild(errEl);
+  }
+  errEl.textContent = message;
 }
 
 
@@ -447,6 +480,104 @@ function initSmoothScroll() {
         top:      targetTop,
         behavior: 'smooth',
       });
+    });
+  });
+}
+
+
+// =========================================
+// PAGE TRANSITIONS
+// Fades the page out before navigating to
+// internal links, creating smooth transitions.
+// =========================================
+
+/**
+ * Intercepts internal link clicks, plays a fade-out
+ * animation on the body, then navigates.
+ * @returns {void}
+ */
+// =========================================
+// VIDEO CONTROLS
+// Per-video mute button (top-right) and
+// progress timeline (bottom) for each panel.
+// =========================================
+
+function initVideoControls() {
+  const areas = document.querySelectorAll('.video-content-area');
+  if (!areas.length) return;
+
+  areas.forEach((area) => {
+    const video     = area.querySelector('video');
+    const muteBtn   = area.querySelector('.vid-mute-btn');
+    const playBtn   = area.querySelector('.vid-playpause');
+    const timeline  = area.querySelector('.vid-timeline');
+    const progress  = area.querySelector('.vid-progress');
+
+    if (!video || !muteBtn || !timeline || !progress) return;
+
+    // Mute / unmute toggle
+    muteBtn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      if (!video.muted && video.volume === 0) video.volume = 0.8;
+      muteBtn.innerHTML = video.muted
+        ? '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>'
+        : '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
+      muteBtn.setAttribute('aria-label', video.muted ? 'Unmute' : 'Mute');
+    });
+
+    // Play / pause toggle
+    if (playBtn) {
+      playBtn.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+          playBtn.innerHTML = '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+          playBtn.setAttribute('aria-label', 'Pause');
+        } else {
+          video.pause();
+          playBtn.innerHTML = '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>';
+          playBtn.setAttribute('aria-label', 'Play');
+        }
+      });
+    }
+
+    // Progress bar — update on timeupdate
+    video.addEventListener('timeupdate', () => {
+      if (!video.duration) return;
+      progress.style.width = ((video.currentTime / video.duration) * 100) + '%';
+    });
+
+    // Scrub on timeline click
+    timeline.addEventListener('click', (e) => {
+      const rect = timeline.getBoundingClientRect();
+      const ratio = (e.clientX - rect.left) / rect.width;
+      video.currentTime = ratio * video.duration;
+    });
+  });
+}
+
+
+function initPageTransitions() {
+  const links = document.querySelectorAll('a[href]');
+
+  links.forEach((link) => {
+    const href = link.getAttribute('href');
+
+    // Only handle internal page links — skip anchors, external, tel, mailto
+    if (
+      !href ||
+      href.startsWith('#') ||
+      href.startsWith('http') ||
+      href.startsWith('mailto') ||
+      href.startsWith('tel') ||
+      link.hasAttribute('target')
+    ) return;
+
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.body.classList.add('is-leaving');
+      setTimeout(() => {
+        window.location.href = href;
+      }, 220);
     });
   });
 }

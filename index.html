@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://kellensnider.github.io/Multi-Contracting/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Barlow+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -23,10 +23,9 @@
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
 
-      <!-- Logo -->
+      <!-- Logo â€" swap src in images/logo.png to change logo sitewide -->
       <a href="index.html" class="nav-logo" aria-label="Multi Contracting LLC homepage">
-        <span class="logo-main">Multi Contracting</span>
-        <span class="logo-sub">LLC — Eugene, OR</span>
+        <img src="images/logo.png" alt="Multi Contracting LLC" class="site-logo">
       </a>
 
       <!-- Mobile toggle -->
@@ -36,31 +35,14 @@
         <span class="hamburger-line"></span>
       </button>
 
-      <!-- Nav links — 3 pill buttons matching reference -->
+      <!-- Nav links â€" 3 direct pill buttons, no dropdowns -->
       <div class="nav-menu" id="navMenu" role="menubar">
         <ul class="nav-list" role="list">
-          <li class="nav-item nav-item--dropdown" role="none">
-            <a href="services/roofing.html" class="nav-link nav-link--dropdown" role="menuitem" aria-haspopup="true" aria-expanded="false">
-              Roofing Services <span class="dropdown-arrow" aria-hidden="true">▾</span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li role="none"><a href="services/roofing.html"             class="dropdown-link" role="menuitem">All Roofing Services</a></li>
-              <li role="none"><a href="services/roof-repair.html"         class="dropdown-link" role="menuitem">Roof Repair</a></li>
-              <li role="none"><a href="services/roof-replacement.html"    class="dropdown-link" role="menuitem">Roof Replacement</a></li>
-              <li role="none"><a href="services/residential-roofing.html" class="dropdown-link" role="menuitem">Residential Roofing</a></li>
-              <li role="none"><a href="services/commercial-roofing.html"  class="dropdown-link" role="menuitem">Commercial Roofing</a></li>
-            </ul>
+          <li class="nav-item" role="none">
+            <a href="services/roofing.html" class="nav-link" role="menuitem">Roofing Services</a>
           </li>
-          <li class="nav-item nav-item--dropdown" role="none">
-            <a href="services/siding.html" class="nav-link nav-link--dropdown" role="menuitem" aria-haspopup="true" aria-expanded="false">
-              Additional Services <span class="dropdown-arrow" aria-hidden="true">▾</span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li role="none"><a href="services/siding.html"   class="dropdown-link" role="menuitem">Siding</a></li>
-              <li role="none"><a href="services/fencing.html"  class="dropdown-link" role="menuitem">Chain Link Fencing</a></li>
-              <li role="none"><a href="services/painting.html" class="dropdown-link" role="menuitem">Painting</a></li>
-              <li role="none"><a href="services/curbing.html"  class="dropdown-link" role="menuitem">Curbing Designs</a></li>
-            </ul>
+          <li class="nav-item" role="none">
+            <a href="additional-services.html" class="nav-link" role="menuitem">Additional Services</a>
           </li>
           <li class="nav-item" role="none">
             <a href="contact.html" class="nav-link" role="menuitem">Contact Us</a>
@@ -143,21 +125,70 @@
 
 
 <!-- =============================================
-     VIDEO STRIP — 4 panels
+     VIDEO STRIP â€" 4 vertical panels with bumpers
 ============================================= -->
 <section class="video-strip" aria-label="Project videos">
-  <div class="video-panel" aria-label="Video 1">
-    <span class="video-panel-label">▶ Project Video</span>
+
+  <div class="video-panel" aria-label="Financing video">
+    <div class="video-bumper-top">
+      <span class="video-bumper-logo">Multi Contracting</span>
+      <span class="video-bumper-sub">Financing Â· Eugene, OR</span>
+    </div>
+    <div class="video-content-area">
+      <video autoplay muted loop playsinline>
+        <source src="videos/financing.mp4" type="video/mp4">
+      </video>
+      <button class="vid-mute-btn" aria-label="Unmute">&#128263;</button>
+      <div class="vid-controls-bar"><button class="vid-playpause" aria-label="Pause">&#9208;</button><div class="vid-timeline"><div class="vid-progress"></div></div></div>
+    </div>
+    <div class="video-bumper-bottom">$0 Down Financing</div>
   </div>
-  <div class="video-panel" aria-label="Video 2">
-    <span class="video-panel-label">▶ Project Video</span>
+
+  <div class="video-panel" aria-label="Neighbors video">
+    <div class="video-bumper-top">
+      <span class="video-bumper-logo">Multi Contracting</span>
+      <span class="video-bumper-sub">Community Â· Eugene, OR</span>
+    </div>
+    <div class="video-content-area">
+      <video autoplay muted loop playsinline>
+        <source src="videos/neighbors.mp4" type="video/mp4">
+      </video>
+      <button class="vid-mute-btn" aria-label="Unmute">&#128263;</button>
+      <div class="vid-controls-bar"><button class="vid-playpause" aria-label="Pause">&#9208;</button><div class="vid-timeline"><div class="vid-progress"></div></div></div>
+    </div>
+    <div class="video-bumper-bottom">Your Neighbors Trust Us</div>
   </div>
-  <div class="video-panel" aria-label="Video 3">
-    <span class="video-panel-label">▶ Project Video</span>
+
+  <div class="video-panel" aria-label="Structural damage video">
+    <div class="video-bumper-top">
+      <span class="video-bumper-logo">Multi Contracting</span>
+      <span class="video-bumper-sub">Roofing Â· Eugene, OR</span>
+    </div>
+    <div class="video-content-area">
+      <video autoplay muted loop playsinline>
+        <source src="videos/structural-damage.mp4" type="video/mp4">
+      </video>
+      <button class="vid-mute-btn" aria-label="Unmute">&#128263;</button>
+      <div class="vid-controls-bar"><button class="vid-playpause" aria-label="Pause">&#9208;</button><div class="vid-timeline"><div class="vid-progress"></div></div></div>
+    </div>
+    <div class="video-bumper-bottom">Old Roofs &amp; Structural Damage</div>
   </div>
-  <div class="video-panel" aria-label="Video 4">
-    <span class="video-panel-label">▶ Project Video</span>
+
+  <div class="video-panel" aria-label="What makes us different video">
+    <div class="video-bumper-top">
+      <span class="video-bumper-logo">Multi Contracting</span>
+      <span class="video-bumper-sub">About Us Â· Eugene, OR</span>
+    </div>
+    <div class="video-content-area">
+      <video autoplay muted loop playsinline>
+        <source src="videos/what-makes-us-different.mp4" type="video/mp4">
+      </video>
+      <button class="vid-mute-btn" aria-label="Unmute">&#128263;</button>
+      <div class="vid-controls-bar"><button class="vid-playpause" aria-label="Pause">&#9208;</button><div class="vid-timeline"><div class="vid-progress"></div></div></div>
+    </div>
+    <div class="video-bumper-bottom">What Makes Us Different</div>
   </div>
+
 </section>
 
 
@@ -191,7 +222,7 @@
         <li>Interior &amp; Exterior Painting</li>
         <li>Curbing Designs</li>
       </ul>
-      <a href="services/siding.html" class="btn-pill-red" aria-label="View additional services">Additional Services</a>
+      <a href="additional-services.html" class="btn-pill-red" aria-label="View additional services">Additional Services</a>
     </div>
 
   </div>
@@ -223,59 +254,13 @@
 
   <div class="about-grid">
 
-    <!-- Newspaper mockup -->
-    <div class="newspaper animate-fade-up" role="img" aria-label="Multi Contracting news feature">
-      <div class="newspaper-header">
-        <div class="newspaper-name">The Oregon Daily</div>
-        <div class="newspaper-subline">Lane County &bull; Serving Homeowners in Oregon &bull; Est. 2024</div>
-      </div>
-      <div class="newspaper-meta">
-        <span>Vol. XXIV &bull; Issue 12</span>
-        <span>Eugene, Oregon</span>
-      </div>
-      <h3 class="newspaper-headline">GET MULTI CONTRACTING</h3>
-      <p class="newspaper-subheadline">The Trusted Community Contracting Company in Lane County, Oregon</p>
-      <div class="newspaper-body">
-        <p>
-          Multi Contracting, LLC has been the roofing and exterior contracting choice for Eugene homeowners
-          for over 20 years. Based at 950 Tyinn St in Eugene, our team serves Lane County with honest work
-          and certified quality you can count on.
-        </p>
-        <p>
-          From roof repair to full replacements, siding, fencing, painting, and custom concrete curbing,
-          we handle your entire exterior under one roof — so you can trust that every part of the job is
-          done right, on time, and within budget.
-        </p>
-        <p>
-          Our bilingual team serves English and Spanish-speaking homeowners throughout Eugene, Springfield,
-          and Santa Clara, OR. Se Habla Español. CCB#238954 — Licensed, Bonded &amp; Insured.
-        </p>
-      </div>
-      <div class="newspaper-cta-box">
-        <div class="newspaper-cta-headline">Call Today for a Free Estimate — No Obligation</div>
-        <div class="newspaper-cta-sub">Real estimates &bull; Real pricing &bull; Real craftsmanship</div>
-      </div>
-    </div>
-
-    <!-- Company text -->
-    <div class="about-text animate-fade-up animate-delay-1">
-      <p>
-        Multi Contracting, LLC is a family-operated company built on faith, quality, and care for
-        our community. We believe that improving homes means more than just completing projects.
-        It means helping people protect one of their most important investments.
-      </p>
-      <p>
-        From full exterior renovations to targeted repairs, our goal is to make sure every home
-        we touch is built to last and cared for over time. We&rsquo;re proud to serve Lane County
-        homeowners as a full-service exterior contractor — roofing, siding, fencing, painting,
-        and curbing, all under one company.
-      </p>
-      <p>
-        Our family and team are dedicated to doing things the right way, with honesty, craftsmanship,
-        and a genuine commitment to helping our neighbors. We don&rsquo;t just work on your home.
-        We take care of it.
-      </p>
-
+    <!-- Story -->
+    <div class="about-text animate-fade-up">
+      <span class="about-label">Our Story</span>
+      <h3 class="about-subtitle">Built on Trust,<br>Backed by Experience</h3>
+      <p>Multi Contracting, LLC was founded right here in Eugene, Oregon with a simple mission: deliver honest, high-quality exterior contracting at a fair price. Over two decades later, that mission still drives everything we do.</p>
+      <p>We are a family-operated company built on faith, quality, and genuine care for our community. From a quick roof patch to a complete commercial installation, we treat every home the way we would treat our own.</p>
+      <p>As a bilingual company (English &amp; Spanish), we serve the full diversity of Lane County. Se Habla Espa&ntilde;ol. CCB#238954 &mdash; Licensed, Bonded &amp; Insured.</p>
       <div class="about-contact-cta">
         <span class="about-contact-script">Get a Free Estimate</span>
         <span class="about-contact-sublabel">Contact Us</span>
@@ -283,7 +268,79 @@
       </div>
     </div>
 
+    <!-- Credentials -->
+    <div class="about-cred-grid animate-fade-up animate-delay-1">
+      <div class="about-cred-card">
+        <div class="about-cred-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+        <div class="about-cred-text">
+          <strong>GAF Master Elite</strong>
+          <span>Top 3% of roofing contractors nationwide</span>
+        </div>
+      </div>
+      <div class="about-cred-card">
+        <div class="about-cred-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M12 8V2"/><path d="m15.5 5-3.5 3-3.5-3"/><line x1="12" y1="14" x2="12" y2="14"/><polyline points="10 12.5 11.5 14 14.5 11"/></svg></div>
+        <div class="about-cred-text">
+          <strong>Owens Corning Preferred</strong>
+          <span>Extended manufacturer warranty coverage</span>
+        </div>
+      </div>
+      <div class="about-cred-card">
+        <div class="about-cred-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M6 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><path d="M9 12h6"/><path d="M9 16h4"/></svg></div>
+        <div class="about-cred-text">
+          <strong>CCB Licensed #238954</strong>
+          <span>Licensed, bonded &amp; fully insured in Oregon</span>
+        </div>
+      </div>
+      <div class="about-cred-card">
+        <div class="about-cred-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="about-cred-text">
+          <strong>20+ Years Experience</strong>
+          <span>Trusted in Lane County since 2004</span>
+        </div>
+      </div>
+      <div class="about-cred-card">
+        <div class="about-cred-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="about-cred-text">
+          <strong>Bilingual Team</strong>
+          <span>Full service in English &amp; Spanish</span>
+        </div>
+      </div>
+      <div class="about-cred-card">
+        <div class="about-cred-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <div class="about-cred-text">
+          <strong>Hearth Financing</strong>
+          <span>Flexible payment options available</span>
+        </div>
+      </div>
+    </div>
+
   </div>
+</section>
+
+<!-- =============================================
+     TESTIMONIALS SECTION
+============================================= -->
+<section class="testimonials-section" aria-labelledby="testimonials-heading">
+  <span class="testimonials-label">Google Reviews</span>
+  <h2 class="testimonials-heading" id="testimonials-heading">What Our Customers Say</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card animate-fade-up">
+      <div class="testimonial-stars" aria-label="5 out of 5 stars"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <p>&ldquo;Multi Contracting LLC did a wonderful job installing all new sheathing and installing a new roof on my house. Their crew pays attention to detail. I&rsquo;m a Realtor and I&rsquo;ve worked with a lot of roofers over the years. I very much recommend Multi Contracting!&rdquo;</p>
+      <span class="testimonial-name">Nicola Calvert</span>
+    </div>
+    <div class="testimonial-card animate-fade-up animate-delay-1">
+      <div class="testimonial-stars" aria-label="5 out of 5 stars"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <p>&ldquo;He is authentically professional in every step of the way from an estimate to a completed job. He did everything he said he would do and then some. His crew worked steadily each day and always cleaned up debris at the end of each day.&rdquo;</p>
+      <span class="testimonial-name">Marilyn A. Hanes</span>
+    </div>
+    <div class="testimonial-card animate-fade-up animate-delay-2">
+      <div class="testimonial-stars" aria-label="5 out of 5 stars"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <p>&ldquo;This company did a superb job in record time. Gerald and the crew are experienced and highly motivated. They did a perfect job for me and my family. Pricing was reasonable too.&rdquo;</p>
+      <span class="testimonial-name">Mona Ragab</span>
+    </div>
+  </div>
+  <a href="https://www.multicontractingllc.com/" target="_blank" rel="noopener" class="btn btn-primary testimonials-cta">See All Reviews</a>
 </section>
 
 </main>
@@ -295,9 +352,6 @@
 <footer class="site-footer" role="contentinfo">
 
   <!-- GET A QUOTE button -->
-  <div class="footer-get-quote">
-    <a href="contact.html" class="btn btn-primary btn-lg" aria-label="Get a free quote">Get a Quote</a>
-  </div>
 
   <!-- Logo + Newsletter row -->
   <div class="footer-top">
@@ -305,30 +359,14 @@
 
       <!-- Logo column -->
       <div class="footer-col">
-        <a href="index.html" class="footer-logo-text" aria-label="Multi Contracting LLC homepage">Multi Contracting</a>
-        <span class="footer-logo-sub">LLC &mdash; Eugene, Oregon</span>
+        <a href="index.html" class="footer-logo-wrap" aria-label="Multi Contracting LLC homepage">
+          <img src="images/logo.png" alt="Multi Contracting LLC" class="footer-logo-img">
+        </a>
         <p class="footer-tagline">We help you take care of your home, the right way.</p>
         <p class="footer-license">CCB# 238954 &bull; Licensed, Bonded &amp; Insured</p>
       </div>
 
-      <!-- Newsletter column -->
-      <div class="footer-col">
-        <h3>Subscribe To Our Newsletter For Deals!</h3>
-        <form class="newsletter-form" action="#" method="post" aria-label="Newsletter signup">
-          <label for="newsletter-email" class="visually-hidden">Email address</label>
-          <input
-            type="email"
-            id="newsletter-email"
-            name="email"
-            class="newsletter-input"
-            placeholder="Enter your address..."
-            aria-label="Email address"
-          >
-          <button type="submit" class="newsletter-btn" aria-label="Subscribe">Subscribe Now</button>
-        </form>
-      </div>
-
-    </div>
+      <!-- Newsletter column --></div>
   </div>
 
   <!-- Divider -->
@@ -340,15 +378,15 @@
       <h3 class="footer-contact-heading">Contact Us</h3>
       <ul class="footer-contact-list" role="list">
         <li class="footer-contact-item">
-          <span class="footer-contact-icon" aria-hidden="true">📞</span>
+          <span class="footer-contact-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg></span>
           <a href="tel:5416009570" aria-label="Call Multi Contracting">(541) 600-9570</a>
         </li>
         <li class="footer-contact-item">
-          <span class="footer-contact-icon" aria-hidden="true">✉</span>
+          <span class="footer-contact-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg></span>
           <a href="mailto:multicontractllc@gmail.com" aria-label="Email Multi Contracting">multicontractllc@gmail.com</a>
         </li>
         <li class="footer-contact-item">
-          <span class="footer-contact-icon" aria-hidden="true">📍</span>
+          <span class="footer-contact-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
           <span>Eugene, Oregon</span>
         </li>
       </ul>
@@ -366,8 +404,8 @@
       <div class="footer-right">
         <span class="footer-ccb">CCB# 238954</span>
         <div class="footer-social-links">
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">&#x1F426;</a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">&#x1F4F7;</a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
         </div>
       </div>
     </div>
@@ -378,3 +416,8 @@
 <script src="js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
