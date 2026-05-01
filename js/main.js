@@ -503,54 +503,24 @@ function initSmoothScroll() {
 // =========================================
 
 function initVideoControls() {
-  const areas = document.querySelectorAll('.video-content-area');
-  if (!areas.length) return;
+  const panels = document.querySelectorAll('.video-panel');
+  if (!panels.length) return;
 
-  areas.forEach((area) => {
-    const video     = area.querySelector('video');
-    const muteBtn   = area.querySelector('.vid-mute-btn');
-    const playBtn   = area.querySelector('.vid-playpause');
-    const timeline  = area.querySelector('.vid-timeline');
-    const progress  = area.querySelector('.vid-progress');
+  const svgMuted   = '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>';
+  const svgUnmuted = '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
 
-    if (!video || !muteBtn || !timeline || !progress) return;
+  customElements.whenDefined('wistia-player').then(() => {
+    panels.forEach((panel) => {
+      const muteBtn = panel.querySelector('.vid-mute-btn');
+      const player  = panel.querySelector('wistia-player');
+      if (!muteBtn || !player) return;
 
-    // Mute / unmute toggle
-    muteBtn.addEventListener('click', () => {
-      video.muted = !video.muted;
-      if (!video.muted && video.volume === 0) video.volume = 0.8;
-      muteBtn.innerHTML = video.muted
-        ? '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>'
-        : '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
-      muteBtn.setAttribute('aria-label', video.muted ? 'Unmute' : 'Mute');
-    });
-
-    // Play / pause toggle
-    if (playBtn) {
-      playBtn.addEventListener('click', () => {
-        if (video.paused) {
-          video.play();
-          playBtn.innerHTML = '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
-          playBtn.setAttribute('aria-label', 'Pause');
-        } else {
-          video.pause();
-          playBtn.innerHTML = '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>';
-          playBtn.setAttribute('aria-label', 'Play');
-        }
+      muteBtn.addEventListener('click', () => {
+        const nowMuted = !player.muted;
+        player.muted = nowMuted;
+        muteBtn.innerHTML = nowMuted ? svgMuted : svgUnmuted;
+        muteBtn.setAttribute('aria-label', nowMuted ? 'Unmute' : 'Mute');
       });
-    }
-
-    // Progress bar — update on timeupdate
-    video.addEventListener('timeupdate', () => {
-      if (!video.duration) return;
-      progress.style.width = ((video.currentTime / video.duration) * 100) + '%';
-    });
-
-    // Scrub on timeline click
-    timeline.addEventListener('click', (e) => {
-      const rect = timeline.getBoundingClientRect();
-      const ratio = (e.clientX - rect.left) / rect.width;
-      video.currentTime = ratio * video.duration;
     });
   });
 }

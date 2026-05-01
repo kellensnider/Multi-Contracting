@@ -146,17 +146,16 @@ All styles are in `css/styles.css`. Key section order (already established):
 | Years in business | 20+ (since 2004) |
 | Financing | Hearth ($0 Down available) |
 | Languages | English & Spanish |
-| GAF status | Master Elite (Top 3%) |
-| Owens Corning status | Preferred Contractor |
+| CertainTeed status | Shingle Master |
 
 ---
 
 ## Open TODOs (unresolved before launch)
 
-- [ ] Social media links in footer are `facebook.com` and `instagram.com` — need actual profile URLs from client
+- [x] Social media links in footer — Facebook: https://www.facebook.com/MultiContractingOR | Instagram: https://www.instagram.com/multicontractingllc1/
 - [ ] Contact form endpoint — verify the `action` URL on `contact.html` is a live Formspree/Web3Forms endpoint
 - [ ] OG image — `og:image` meta tags may be missing or pointing to a nonexistent file; create and verify before social sharing
-- [ ] Exact street address — needed to complete LocalBusiness JSON-LD schema; currently missing
+- [x] Exact street address — 90050 Prairie Rd, Eugene, OR 97402
 - [ ] Geo coordinates (lat/lng) — needed for JSON-LD schema
 - [ ] Favicon — not present in repo; create 32×32px version of logo mark
 - [ ] robots.txt — not present; create before treating this as production
@@ -174,5 +173,5 @@ All assumptions are documented here per company standards. Confirm with client b
 | Assumption | Location |
 |---|---|
 | Business hours: Mon–Fri 8AM–5PM | footer.html, contact.html |
-| Address: Eugene, OR only (no street) | Structured data placeholder |
-| Social links: placeholder URLs | Footer bottom bar |
+| Address: 90050 Prairie Rd, Eugene, OR 97402 | contact.html sidebar, footer |
+| Social links: confirmed URLs | Footer bottom bar |

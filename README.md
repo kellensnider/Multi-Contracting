@@ -7,7 +7,7 @@ Production-ready static website for Multi Contracting, LLC, a licensed roofing a
 ## Project Overview
 
 **Business:** Multi Contracting, LLC  
-**Location:** 950 Tyinn St, Eugene, OR 97402  
+**Location:** 90050 Prairie Rd, Eugene, OR 97402  
 **Phone:** (541) 600-9570  
 **Email:** multicontractllc@gmail.com  
 **License:** CCB#238954 — Licensed, Bonded & Insured  

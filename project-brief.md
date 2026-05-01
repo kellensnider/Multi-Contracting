@@ -15,7 +15,7 @@
 **Service region:** Lane County and the greater Willamette Valley  
 **Phone:** (541) 600-9570  
 **Email:** multicontractllc@gmail.com  
-**Address:** Eugene, OR (exact street address not provided — flag if needed for structured data)  
+**Address:** 90050 Prairie Rd, Eugene, OR 97402  
 **License:** CCB #238954 — Licensed, Bonded & Insured in Oregon  
 **Founded:** ~2004 (20+ years in business)  
 **Languages:** English & Spanish (Se Habla Español)  
@@ -34,8 +34,7 @@ the full diversity of Lane County. They offer financing through Hearth ($0 Down 
 
 | Credential | Detail |
 |---|---|
-| GAF Master Elite | Top 3% of roofing contractors nationwide |
-| Owens Corning Preferred | Extended manufacturer warranty coverage |
+| CertainTeed Shingle Master | Certified installer for premium CertainTeed roofing systems |
 | CCB Licensed #238954 | Licensed, bonded & fully insured in Oregon |
 | 20+ Years Experience | Trusted in Lane County since 2004 |
 | Bilingual Team | Full service in English & Spanish |
