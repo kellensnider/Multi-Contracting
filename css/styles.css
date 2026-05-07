@@ -1832,7 +1832,7 @@ textarea.form-control { min-height: 140px; resize: vertical; }
   .grid--3 { grid-template-columns: 1fr 1fr; }
   .grid--4 { grid-template-columns: 1fr 1fr; }
 
-  .feature-strip { grid-template-columns: repeat(3, 1fr); }
+  .feature-strip { flex-direction: row; align-items: flex-start; }
   .feature-strip-grid { grid-template-columns: repeat(3, 1fr); }
 
   .about-grid { grid-template-columns: 1fr 1fr; }
@@ -1869,13 +1869,32 @@ textarea.form-control { min-height: 140px; resize: vertical; }
   .nav-link { font-size: 0.88rem; padding: 10px 22px; }
 }
 
-/* Mobile overrides */
+/* Mobile overrides — 767px and below */
 @media (max-width: 767px) {
-  .video-strip { grid-template-columns: repeat(2, 1fr); padding: 12px 12px 0; gap: 8px; }
-  .services-dark-grid { grid-template-columns: 1fr; }
-  .feature-strip { grid-template-columns: 1fr; gap: var(--spacing-md); }
-  .about-grid { grid-template-columns: 1fr; }
+  /* Nav */
+  :root { --nav-height: 90px; }
+  .nav-toggle { display: flex; }
+  .site-logo { width: 130px; height: auto; }
   .nav-ccb-badge { display: none; }
+
+  /* Hero */
+  .hero { padding: var(--spacing-md) 1.5rem; min-height: 0; }
+  .hero-title, h1.hero-title { font-size: 3rem; }
+  .hero-cta-pill { padding: 14px 40px; }
+
+  /* Feature strip */
+  .feature-strip { flex-direction: column; align-items: flex-start; gap: var(--spacing-md); }
+
+  /* Videos */
+  .video-strip { grid-template-columns: repeat(2, 1fr); padding: 12px 12px 0; gap: 8px; }
+
+  /* Content grids */
+  .services-dark-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-cred-grid { grid-template-columns: 1fr 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
   .footer-grid { grid-template-columns: 1fr; }
   .footer-contact-row { justify-content: flex-start; }
   .footer-contact-block { text-align: left; }
@@ -1884,10 +1903,25 @@ textarea.form-control { min-height: 140px; resize: vertical; }
   .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 
+/* Small mobile — 480px and below */
 @media (max-width: 480px) {
-  .hero-title, h1.hero-title { font-size: 2.8rem; }
-  .video-strip { grid-template-columns: repeat(2, 1fr); }
+  :root { --nav-height: 80px; }
   .nav-container { padding: 0 1rem; }
+  .site-logo { width: 110px; height: auto; }
+
+  .hero { padding: var(--spacing-sm) 1rem; }
+  .hero-title, h1.hero-title { font-size: 2.4rem; }
+  .hero-cta-pill { padding: 12px 32px; font-size: 0.9rem; }
+
+  .video-strip { grid-template-columns: repeat(2, 1fr); }
+
+  /* Prevent iOS auto-zoom on input focus */
+  .form-control, select { font-size: 16px; }
+
+  .testimonial-card { padding: var(--spacing-md); }
+
+  .footer-logo-img { height: 64px; }
+  .footer-social-links { gap: 12px; }
 }
 
 
