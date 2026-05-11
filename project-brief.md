@@ -14,7 +14,7 @@
 **Primary location:** Eugene, Oregon  
 **Service region:** Lane County and the greater Willamette Valley  
 **Phone:** (541) 600-9570  
-**Email:** multicontractllc@gmail.com  
+**Email:** Gladis@multi-contracting.com  
 **Address:** 90050 Prairie Rd, Eugene, OR 97402  
 **License:** CCB #238954 — Licensed, Bonded & Insured in Oregon  
 **Founded:** ~2004 (20+ years in business)  

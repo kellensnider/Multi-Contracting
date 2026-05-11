@@ -139,7 +139,7 @@ All styles are in `css/styles.css`. Key section order (already established):
 | Business name | Multi Contracting, LLC |
 | Phone | (541) 600-9570 |
 | Phone (href) | tel:5416009570 |
-| Email | multicontractllc@gmail.com |
+| Email | Gladis@multi-contracting.com |
 | City | Eugene |
 | State | OR |
 | CCB License | #238954 |
@@ -153,7 +153,7 @@ All styles are in `css/styles.css`. Key section order (already established):
 ## Open TODOs (unresolved before launch)
 
 - [x] Social media links in footer — Facebook: https://www.facebook.com/MultiContractingOR | Instagram: https://www.instagram.com/multicontractingllc1/
-- [ ] Contact form endpoint — verify the `action` URL on `contact.html` is a live Formspree/Web3Forms endpoint
+- [x] Contact form endpoint — Web3Forms, submits to Gladis@multi-contracting.com
 - [ ] OG image — `og:image` meta tags may be missing or pointing to a nonexistent file; create and verify before social sharing
 - [x] Exact street address — 90050 Prairie Rd, Eugene, OR 97402
 - [ ] Geo coordinates (lat/lng) — needed for JSON-LD schema

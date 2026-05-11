@@ -9,7 +9,7 @@ Production-ready static website for Multi Contracting, LLC, a licensed roofing a
 **Business:** Multi Contracting, LLC  
 **Location:** 90050 Prairie Rd, Eugene, OR 97402  
 **Phone:** (541) 600-9570  
-**Email:** multicontractllc@gmail.com  
+**Email:** Gladis@multi-contracting.com  
 **License:** CCB#238954 — Licensed, Bonded & Insured  
 **Languages:** English & Spanish (Se Habla Español)  
 

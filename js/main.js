@@ -266,7 +266,7 @@ function initContactForm() {
         showFormSuccess(form);
       } else {
         const data = await response.json();
-        const msg = (data.errors || []).map(e => e.message).join(', ') || 'Submission failed. Please call us directly at (541) 600-9570.';
+        const msg = data.message || 'Submission failed. Please call us directly at (541) 600-9570.';
         showFormError(form, msg);
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
