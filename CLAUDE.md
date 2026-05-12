@@ -156,7 +156,7 @@ All styles are in `css/styles.css`. Key section order (already established):
 - [x] Contact form endpoint — Web3Forms, submits to Gladis@multi-contracting.com
 - [ ] OG image — `og:image` meta tag missing on all pages; create 1200×630px image before social sharing
 - [x] Exact street address — 90050 Prairie Rd, Eugene, OR 97402
-- [ ] Geo coordinates (lat/lng) — needed for JSON-LD schema (schema not yet added)
+- [x] Geo coordinates — 44.10702961983307, -123.16426173191445 — added to JSON-LD schema on index.html
 - [x] Favicon — `images/logo.png` linked as favicon on all pages
 - [x] robots.txt — created; sitemap URL points to GitHub Pages URL (update when custom domain goes live)
 - [x] sitemap.xml — created with all 4 pages; update URLs when custom domain goes live
