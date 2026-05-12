@@ -162,6 +162,7 @@ All styles are in `css/styles.css`. Key section order (already established):
 - [x] sitemap.xml — created with all 4 pages; update URLs when custom domain goes live
 - [x] Business hours — confirmed Mon–Fri 8AM–6PM
 - [x] Custom domain — handled by client
+- [ ] Update URLs when custom domain goes live — og:image (all pages), og:url (index.html), sitemap.xml (all entries), JSON-LD url field (index.html)
 - [x] Video files — migrated to Wistia-hosted embeds (4 videos on homepage); local `videos/` folder retained but gitignored
 
 ---
