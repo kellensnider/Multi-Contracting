@@ -154,7 +154,7 @@ All styles are in `css/styles.css`. Key section order (already established):
 
 - [x] Social media links in footer — Facebook: https://www.facebook.com/MultiContractingOR | Instagram: https://www.instagram.com/multicontractingllc1/
 - [x] Contact form endpoint — Web3Forms, submits to Gladis@multi-contracting.com
-- [ ] OG image — `og:image` meta tag missing on all pages; create 1200×630px image before social sharing
+- [x] OG image — using logo.png (square crop, acceptable stopgap); update with a proper 1200×630px image if client requests better social previews
 - [x] Exact street address — 90050 Prairie Rd, Eugene, OR 97402
 - [x] Geo coordinates — 44.10702961983307, -123.16426173191445 — added to JSON-LD schema on index.html
 - [x] Favicon — `images/logo.png` linked as favicon on all pages
