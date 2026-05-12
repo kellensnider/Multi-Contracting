@@ -154,15 +154,15 @@ All styles are in `css/styles.css`. Key section order (already established):
 
 - [x] Social media links in footer — Facebook: https://www.facebook.com/MultiContractingOR | Instagram: https://www.instagram.com/multicontractingllc1/
 - [x] Contact form endpoint — Web3Forms, submits to Gladis@multi-contracting.com
-- [ ] OG image — `og:image` meta tags may be missing or pointing to a nonexistent file; create and verify before social sharing
+- [ ] OG image — `og:image` meta tag missing on all pages; create 1200×630px image before social sharing
 - [x] Exact street address — 90050 Prairie Rd, Eugene, OR 97402
-- [ ] Geo coordinates (lat/lng) — needed for JSON-LD schema
-- [ ] Favicon — not present in repo; create 32×32px version of logo mark
-- [ ] robots.txt — not present; create before treating this as production
-- [ ] sitemap.xml — not present; create and ensure all page URLs are correct
-- [ ] Business hours — assumed Mon–Fri 8AM–5PM; confirm with client
-- [ ] Custom domain — confirm if client wants to point their domain to GitHub Pages
-- [ ] Video files — `videos/*.mp4` not in repo; confirm hosting plan with client
+- [ ] Geo coordinates (lat/lng) — needed for JSON-LD schema (schema not yet added)
+- [x] Favicon — `images/logo.png` linked as favicon on all pages
+- [x] robots.txt — created; sitemap URL points to GitHub Pages URL (update when custom domain goes live)
+- [x] sitemap.xml — created with all 4 pages; update URLs when custom domain goes live
+- [x] Business hours — confirmed Mon–Fri 8AM–6PM
+- [x] Custom domain — handled by client
+- [x] Video files — migrated to Wistia-hosted embeds (4 videos on homepage); local `videos/` folder retained but gitignored
 
 ---
 

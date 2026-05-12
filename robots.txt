@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kellensnider.github.io/Multi-Contracting/sitemap.xml
